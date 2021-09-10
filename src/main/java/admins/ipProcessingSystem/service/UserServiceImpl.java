@@ -29,6 +29,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public void update(IpDetails ipDetails) {
+        userDao.update(ipDetails);
+    }
+
+
+    @Override
     public List<IpDetails> findIpByUserId(int userId) {
         return userDao.findIpByUserId(userId);
     }

@@ -1,7 +1,5 @@
 package admins.ipProcessingSystem.service;
 
-import admins.ipProcessingSystem.dao.UserDao;
-import admins.ipProcessingSystem.entity.Admin;
 import admins.ipProcessingSystem.entity.IpDetails;
 import admins.ipProcessingSystem.entity.Users;
 
@@ -12,5 +10,6 @@ public interface UserService {
     Users findByUserId(int userId);
     List<IpDetails> findIpByUserId(int userId);
     public void save(IpDetails ipDetails);
+    public void update(IpDetails ipDetails);
 
 }

@@ -20,7 +20,7 @@ public class IpDetails {
     String ip;
 
     @Column(name="Description")
-    @NotEmpty(message = "Ip discription is required")
+    //@NotEmpty(message = "Ip discription is required")
     String discription;
 
     @Column(name="user_id")

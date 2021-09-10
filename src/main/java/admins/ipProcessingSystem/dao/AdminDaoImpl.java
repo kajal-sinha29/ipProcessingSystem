@@ -11,13 +11,11 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
-public class AdminHibernateImpl implements AdminDao{
-
+public class AdminDaoImpl implements AdminDao{
 
     private EntityManager entityManager;
 
-
-    public AdminHibernateImpl(EntityManager entityManager) {
+    public AdminDaoImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 

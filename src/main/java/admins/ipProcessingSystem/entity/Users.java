@@ -1,7 +1,11 @@
 package admins.ipProcessingSystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -13,23 +17,25 @@ public class Users {
     int userId;
 
     @Column(name="user_name")
-    @NotEmpty(message = "user name is required")
+    //@NotEmpty(message = "user name is required")
     String userName;
     
     @Column(name="admin_id")
-    @NotEmpty(message = "admin_id is required")
+    //@NotEmpty(message = "admin_id is required")
     int adminId;
 
     @Column(name="rights")
-    @NotEmpty(message = "right is required")
-    String rights;
+    //@NotEmpty(message = "right is required")
+    String rightName;
+
 
     public Users(){}
 
-    public Users(String userName, int adminId, String rights) {
+    public Users(String userName, int adminId, String rightName) {
         this.userName = userName;
         this.adminId = adminId;
-        this.rights = rights;
+        this.rightName = rightName;
+
     }
 
     public int getUserId() {
@@ -57,12 +63,22 @@ public class Users {
     }
 
     public String getRights() {
-        return rights;
+        return rightName;
     }
 
     public void setRights(String rights) {
-        this.rights = rights;
+        this.rightName = rights;
     }
+
+    public String getRightName() {
+        return rightName;
+    }
+
+    public void setRightName(String rightName) {
+        this.rightName = rightName;
+    }
+
+
 
     @Override
     public String toString() {
@@ -70,7 +86,7 @@ public class Users {
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", adminId=" + adminId +
-                ", rights='" + rights + '\'' +
+                ", rightName='" + rightName + '\'' +
                 '}';
     }
 }
